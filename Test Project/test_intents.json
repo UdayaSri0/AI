@@ -1,0 +1,38 @@
+import json
+import unittest
+
+class TestIntents(unittest.TestCase):
+
+    def setUp(self):
+        with open('Test Project/intents.json', 'r') as f:
+            self.intents = json.load(f)
+
+    def test_intents_structure(self):
+        self.assertIsInstance(self.intents, dict)
+        self.assertIn('intents', self.intents)
+        self.assertIsInstance(self.intents['intents'], list)
+
+    def test_intent_format(self):
+        for intent in self.intents['intents']:
+            self.assertIn('tag', intent)
+            self.assertIn('patterns', intent)
+            self.assertIn('responses', intent)
+            self.assertIsInstance(intent['patterns'], list)
+            self.assertIsInstance(intent['responses'], list)
+
+    def test_unique_tags(self):
+        tags = [intent['tag'] for intent in self.intents['intents']]
+        self.assertEqual(len(tags), len(set(tags)), "Tags should be unique")
+
+    def test_non_empty_patterns_and_responses(self):
+        for intent in self.intents['intents']:
+            self.assertTrue(len(intent['patterns']) > 0, f"Patterns for {intent['tag']} should not be empty")
+            self.assertTrue(len(intent['responses']) > 0, f"Responses for {intent['tag']} should not be empty")
+
+    def test_valid_json_structure(self):
+        with open('Test Project/intents.json', 'r') as f:
+            content = f.read()
+            self.assertIsInstance(json.loads(content), dict)
+
+if __name__ == '__main__':
+    unittest.main()

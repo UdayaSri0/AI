@@ -1,0 +1,35 @@
+{
+    "intents": [
+      {
+        "tag": "greeting",
+        "patterns": ["Hi", "Hello", "Hey", "Good morning", "Good evening", "What's up", "Howdy"],
+        "responses": ["Hello!", "Hi there!", "Greetings!", "How can I assist you today?", "Hey!"]
+      },
+      {
+        "tag": "goodbye",
+        "patterns": ["Bye", "See you later", "Goodbye", "Take care", "Catch you later"],
+        "responses": ["Goodbye!", "See you soon!", "Have a great day!", "Farewell!", "Take care!"]
+      },
+      {
+        "tag": "thanks",
+        "patterns": ["Thanks", "Thank you", "That's helpful", "Much appreciated", "Thanks a lot"],
+        "responses": ["You're welcome!", "Happy to help!", "Anytime!", "My pleasure!", "No problem!"]
+      },
+      {
+        "tag": "age",
+        "patterns": ["How old are you?", "What's your age?", "Tell me your age"],
+        "responses": ["I'm a computer program, so I don't have an age.", "Age is just a number!", "I was created recently."]
+      },
+      {
+        "tag": "name",
+        "patterns": ["What's your name?", "Who are you?", "Identify yourself", "Your name?"],
+        "responses": ["I'm an AI chatbot.", "I'm your friendly assistant.", "You can call me Chatbot."]
+      },
+      {
+        "tag": "noanswer",
+        "patterns": [],
+        "responses": ["I'm sorry, I didn't understand that.", "Could you please rephrase?", "I'm not sure I follow."]
+      }
+    ]
+  }
+  
