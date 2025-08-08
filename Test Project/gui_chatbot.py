@@ -25,8 +25,8 @@ lemmatizer = WordNetLemmatizer()
 # Load files
 with open('intents.json', 'r') as file:
     intents = json.load(file)
-words = pickle.load(open('words.pkl', 'rb'))
-classes = pickle.load(open('classes.pkl', 'rb'))
+words = pickle.load(open('words.pickle', 'rb'))
+classes = pickle.load(open('classes.pickle', 'rb'))
 model = load_model('model.h5')
 
 def clean_up_sentence(sentence):
